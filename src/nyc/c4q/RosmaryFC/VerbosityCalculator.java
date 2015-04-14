@@ -27,7 +27,8 @@ public class VerbosityCalculator {
             while(scTwoCities.hasNext()){
                 String currentWord = scTwoCities.next();// scans through A Tale of Two Cities word by word
                 twoCitiesTotalNumOfWords ++;
-                if(currentWord.charAt(currentWord.length() - 1) == '.'){//if last character in word is a period
+                char lastChar = currentWord.charAt(currentWord.length() - 1);
+                if(lastChar == '.' || lastChar == '?' || lastChar == '!'){//if last character in word is a period
                     if(wordsToNotContain(currentWord) == true ) { // and if String currentWord is not any in wordsToNotContain method
                         twoCitiesTotalNumOfSentences ++;
                     }
@@ -37,7 +38,8 @@ public class VerbosityCalculator {
             while (scMobyDick.hasNext()){
                 String currentWord = scMobyDick.next();//scans through Moby Dick word by word
                 mobyDickTotalNumOfWords ++;
-                if(currentWord.charAt(currentWord.length()-1) == '.'){ // if last character in word is a period
+                char lastChar = currentWord.charAt(currentWord.length() - 1);
+                if(lastChar == '.' || lastChar == '?' || lastChar == '!'){ // if last character in word is a period
                     if(wordsToNotContain(currentWord) == true ) { // and if String currentWord is not any in wordsToNotContain method
                         mobyDickTotalNumOfSentences ++;
                     }
